@@ -12,6 +12,20 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const SITE_URL = "https://imagenmerce.vercel.app";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Imagenmerce",
+  url: SITE_URL,
+  logo: `${SITE_URL}/imagenmerce-logo.png`,
+  image: `${SITE_URL}/imagenmerce-logo.png`,
+  description: "Art-directed product imaging studio creating consistent, marketplace-ready visual systems from product reference photos.",
+  email: "imagenmerce@gmail.com",
+  areaServed: "Worldwide",
+  serviceType: ["Product photography", "E-commerce product imagery", "Catalog image production"],
+};
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -80,10 +94,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Imagenmerce — AI Product Imaging" },
       { name: "description", content: "Turn one product reference into a consistent six-image product visual system." },
       { name: "author", content: "Imagenmerce" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "theme-color", content: "#111827" },
       { property: "og:title", content: "Imagenmerce — AI Product Imaging" },
       { property: "og:description", content: "Product imagery built around your reference photo." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:site_name", content: "Imagenmerce" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Imagenmerce — AI Product Imaging" },
+      { name: "twitter:description", content: "Product imagery built around your reference photo." },
     ],
     links: [
       {
@@ -94,6 +114,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "canonical", href: `${SITE_URL}/` },
+      { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/` },
     ],
   }),
   shellComponent: RootShell,
@@ -107,6 +129,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
       <body>
         {children}
