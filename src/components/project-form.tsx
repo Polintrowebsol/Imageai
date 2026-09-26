@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { track } from "@/lib/analytics";
 
 const OPEN_EVENT = "imagenmerce:open-project-form";
 const JOTFORM_URL = "https://form.jotform.com/262645167772062";
 
 export function openProjectForm() {
+  track("studio_project_cta_click", "website");
   window.dispatchEvent(new Event(OPEN_EVENT));
 }
 

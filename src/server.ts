@@ -28,6 +28,7 @@ const SECURITY_HEADERS: Record<string, string> = {
   "referrer-policy": "strict-origin-when-cross-origin",
   "x-content-type-options": "nosniff",
   "x-frame-options": "SAMEORIGIN",
+  "strict-transport-security": "max-age=31536000",
 };
 
 function withSecurityHeaders(response: Response): Response {

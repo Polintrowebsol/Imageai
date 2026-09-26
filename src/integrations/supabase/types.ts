@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      free_audit_requests: {
+        Row: {
+          id: string
+          first_name: string
+          last_name: string
+          business_name: string
+          business_website: string | null
+          product_url: string | null
+          email: string
+          platform: string
+          number_of_products: string
+          improvements: string[]
+          reference_path: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          first_name: string
+          last_name: string
+          business_name: string
+          business_website?: string | null
+          product_url?: string | null
+          email: string
+          platform: string
+          number_of_products: string
+          improvements: string[]
+          reference_path?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          first_name?: string
+          last_name?: string
+          business_name?: string
+          business_website?: string | null
+          product_url?: string | null
+          email?: string
+          platform?: string
+          number_of_products?: string
+          improvements?: string[]
+          reference_path?: string | null
+          created_at?: string
+        }
+        Relationships: []
+      }
       project_requests: {
         Row: {
           business_name: string

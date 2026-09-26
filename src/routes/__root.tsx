@@ -19,11 +19,12 @@ const structuredData = {
   name: "Imagenmerce",
   url: SITE_URL,
   logo: `${SITE_URL}/imagenmerce-logo.png`,
-  image: `${SITE_URL}/imagenmerce-logo.png`,
-  description: "Art-directed product imaging studio creating consistent, marketplace-ready visual systems from product reference photos.",
+  image: `${SITE_URL}/images/stamp2/furniture-lifestyle.webp`,
+  description: "Professional ecommerce product imagery for Amazon, Shopify and DTC brands, created through a controlled production and QA workflow.",
   email: "imagenmerce@gmail.com",
   areaServed: "Worldwide",
-  serviceType: ["Product photography", "E-commerce product imagery", "Catalog image production"],
+  serviceType: ["Ecommerce product imagery", "Catalog image production"],
+  address: { "@type": "PostalAddress", streetAddress: "48, Pocket 4, Sector 20, Rohini", addressLocality: "New Delhi", postalCode: "110083", addressCountry: "IN" },
 };
 
 function NotFoundComponent() {
@@ -91,19 +92,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Imagenmerce — AI Product Imaging" },
-      { name: "description", content: "Turn one product reference into a consistent six-image product visual system." },
       { name: "author", content: "Imagenmerce" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "theme-color", content: "#111827" },
-      { property: "og:title", content: "Imagenmerce — AI Product Imaging" },
-      { property: "og:description", content: "Product imagery built around your reference photo." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: SITE_URL },
-      { property: "og:site_name", content: "Imagenmerce" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Imagenmerce — AI Product Imaging" },
-      { name: "twitter:description", content: "Product imagery built around your reference photo." },
     ],
     links: [
       {
@@ -114,8 +105,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "canonical", href: `${SITE_URL}/` },
-      { rel: "alternate", hrefLang: "en", href: `${SITE_URL}/` },
     ],
   }),
   shellComponent: RootShell,
