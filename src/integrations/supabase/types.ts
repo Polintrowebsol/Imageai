@@ -26,6 +26,7 @@ export type Database = {
           platform: string
           number_of_products: string
           improvements: string[]
+          plan_interest: string | null
           reference_path: string | null
           created_at: string
         }
@@ -40,6 +41,7 @@ export type Database = {
           platform: string
           number_of_products: string
           improvements: string[]
+          plan_interest?: string | null
           reference_path?: string | null
           created_at?: string
         }
@@ -54,6 +56,7 @@ export type Database = {
           platform?: string
           number_of_products?: string
           improvements?: string[]
+          plan_interest?: string | null
           reference_path?: string | null
           created_at?: string
         }

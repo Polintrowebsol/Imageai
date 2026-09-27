@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { PortfolioPreview } from "@/components/portfolio-preview";
 import { SiteHeader } from "@/components/site-header";
 import { PricingPreview } from "@/components/pricing-preview";
-import { ProjectFormDialog, openProjectForm } from "@/components/project-form";
+import { openProjectForm } from "@/components/project-form";
 import { AuditFormDialog, openFreeAudit } from "@/components/audit-form";
 const reference = "/images/IMG-FRN-032.webp";
 const hero = "/images/IMG-FRN-032_1.webp";
@@ -83,7 +83,7 @@ function Index() {
   useReveal();
   const [processStep,setProcessStep]=useState(0);
   const checks=["Square composition","Balanced product scale","Controlled neutral background","Consistent baseline","Consistent camera language","Natural ground shadow","Product-only hero presentation","Detail image included","Dimension visual where required","Consistent treatment across the set"];
-  return <main id="top" className="overflow-clip"><SiteHeader/><ProjectFormDialog/><AuditFormDialog/>
+  return <main id="top" className="overflow-clip"><SiteHeader/><AuditFormDialog/>
     <section className="page-shell flex flex-col justify-center pb-8 pt-20 sm:min-h-[86vh] sm:pb-10 sm:pt-32"><div className="grid min-w-0 items-center gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,46rem)]"><div className="order-2 min-w-0 py-2 sm:order-1 sm:py-8"><p className="eyebrow text-signal">Amazon • Shopify • DTC</p><p className="display-title mt-4 inline-block bg-signal px-2 py-1 text-sm text-white sm:mt-6 sm:text-xl">E-commerce Visual Conversion Studio</p><h1 className="display-title mt-6 break-words text-[2.2rem] sm:text-5xl lg:text-[3.25rem]">Turn One Product Reference Into a Complete Ecommerce Image Set.</h1><p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground sm:mt-7 sm:text-base sm:leading-8">Professional product visuals for Amazon, Shopify and DTC brands — created from your existing product references through a controlled production and QA workflow.</p><p className="mt-4 text-xs font-semibold uppercase tracking-wide text-signal">AI-assisted. Studio-refined. Quality-controlled.</p><p className="mt-5 text-xs leading-6 text-muted-foreground">Hero • Angle • Detail • Lifestyle • Features • Dimensions</p><div className="mt-7 flex flex-wrap gap-3"><Button onClick={()=>openFreeAudit("hero")}>Get a Free Product Image Audit <ArrowRight size={15}/></Button><Button variant="outline" asChild><a href="/portfolio">View Our Work <ArrowRight size={15}/></a></Button></div></div><Compare className="order-1 aspect-square w-full max-w-[46rem] min-h-0 justify-self-center sm:order-2 lg:justify-self-end"/></div></section>
 
     <section className="section-pad bg-secondary"><div className="page-shell grid gap-10 lg:grid-cols-[.9fr_1.1fr]"><div><p className="eyebrow text-signal">From reference to finished set</p><h2 className="display-title mt-4 text-[2.65rem] leading-tight sm:text-6xl">One Product.<br/>A Complete Visual System.</h2><p className="mt-6 max-w-xl text-sm leading-7 text-muted-foreground">Send the product references you already have. We turn them into ecommerce-ready visuals through controlled production and quality review. Professional studio photography is not required to get started.</p></div><div className="border-t pt-5"><p className="eyebrow text-signal">What you provide</p>{["Product reference image(s)","Product name and details","Required features or benefits","Dimensions, when needed","Brand guidelines, when available"].map((item,i)=><div key={item} className="flex gap-5 border-b py-4 text-sm sm:text-base"><span className="text-signal">0{i+1}</span>{item}</div>)}</div></div></section>
@@ -165,7 +165,7 @@ function Index() {
       ["Can you create lifestyle scenes?","Yes, when they suit the product and scope. We agree on the intended environment in the brief."],
       ["Can you create dimension graphics?","Yes, when required. Please supply verified dimensions; specifications must be checked before commercial use."],
       ["Can you handle multiple products?","Yes. Growth and volume scopes cover several products with a consistent visual approach. We quote each catalog scope individually."],
-      ["Can I test one product first?","Yes. The trial starting option covers one product and three agreed images. Price and terms are confirmed in the quotation."],
+      ["What is the minimum starting scope?","The starting scope is a minimum of five products with three images per product. Price and terms are confirmed in the quotation."],
       ["How does the revision process work?","The number of revisions and review stages are confirmed in the project quotation before production starts."],
       ["How long does a project take?","Turnaround depends on product complexity, image count and review scope. We confirm the schedule with your brief."],
     ].map(([q,a])=><details key={q} className="group bg-background p-6"><summary className="cursor-pointer list-none text-lg font-semibold">{q}<span className="float-right text-signal group-open:rotate-45">+</span></summary><p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground">{a}</p></details>)}</div></section>
