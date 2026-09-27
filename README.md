@@ -1481,3 +1481,7 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Enquiry form
+
+Free Product Image Audit and Start a Studio Project open the existing Jotform at https://form.jotform.com/262645167772062. The pricing cards have no plan-selection links. The free audit no longer submits to Supabase, and its SQL migrations are not needed. The business should check that the Jotform questions suit both audit and project requests.
