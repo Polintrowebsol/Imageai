@@ -102,8 +102,15 @@ img { max-width: 100%; }
   }
 
   .page-shell { width: min(100% - 1.25rem, 86rem); }
-  .section-pad { padding-block: 2.5rem; }
+  .section-pad { padding-block: 2rem; }
   .display-title { overflow-wrap: anywhere; }
+
+  /* Page introductions should follow their content on a phone, not reserve desktop-sized space. */
+  .page-shell.pt-28 { padding-top: 5rem; }
+  .page-shell.min-h-\[70vh\] { min-height: auto; padding-bottom: 3rem; }
+
+  /* Keep information-dense mobile pages compact without compromising tap targets. */
+  .page-shell > .section-pad { padding-block: 2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
